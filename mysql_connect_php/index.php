@@ -1,17 +1,38 @@
 <?php
-//mysql connect php
-$host ='localhost';
-$user ='root';
-$password ='';
-$database = 'table';
+    require_once 'config.php';
 
-$connect = mysqli_connect($host,$user,$password, $database);
+//     $sql = "SELECT * FROM student";   
+    
+//     $query = mysqli_query ($connect , $sql);
+//   // var_dump($query)
 
-if (!$connect) {
-    echo 'connection fail ! ';
-}else {
-    echo 'connection Successfully ! ';
-};
+//    if ($query -> num_rows > 0 ) {
+//        foreach($query as $kay => $value){
+//            echo 'Name: '. $value['Name'] . '    Email: '. $value['Email'] . '<br/>';
+//        }
+//    }else {
+//        echo "NO USERS !";
+//    }
 
+
+    $sql = "INSERT INTO student (Name, Email, Phone)
+             VALUES ('Badsha', 'badsha@gmail.com', '0129202')";
+
+    $query = mysqli_query($connect , $sql);
+         
+    // var_dump($query);
+    if ($query) {
+        echo "Successfully users added  !";
+    }else {
+        echo " Something went worng ! ";
+    }
+
+    // $sql = "DELETE FROM student where id = 10";
+    //$query = mysqli_query($connect , $sql);
+    //    if ($query) {
+    //     echo "Successfully users deleted !";
+    // }else {
+    //     echo " Something went worng ! ";
+    // }
 
 ?>
