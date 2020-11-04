@@ -1,7 +1,11 @@
 <?php
     session_start();
+
+        require_once 'functions.php';
+
 //site url
     define('APP_URL' , 'http://localhost/LearnPHP/RAW_PHP_Project');
+
 
 
 //mysql connect php
